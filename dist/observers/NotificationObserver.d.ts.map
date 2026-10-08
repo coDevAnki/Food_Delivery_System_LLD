@@ -1,0 +1,1 @@
+{"version":3,"file":"NotificationObserver.d.ts","sourceRoot":"","sources":["../../src/observers/NotificationObserver.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,UAAU,EAAE,MAAM,6BAA6B,CAAC;AAGxE;;;;;;;;;;;;;;GAcG;AACH,qBAAa,oBAAqB,YAAW,aAAa;IACxD,YAAY,CAAC,KAAK,EAAE,UAAU,GAAG,IAAI;CA0CtC"}

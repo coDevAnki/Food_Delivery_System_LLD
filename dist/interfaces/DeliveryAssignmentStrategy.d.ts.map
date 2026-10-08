@@ -1,0 +1,1 @@
+{"version":3,"file":"DeliveryAssignmentStrategy.d.ts","sourceRoot":"","sources":["../../src/interfaces/DeliveryAssignmentStrategy.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,2BAA2B,CAAC;AAC5D,OAAO,EAAE,KAAK,EAAE,MAAM,iBAAiB,CAAC;AAExC;;;;;;;;;GASG;AACH,MAAM,WAAW,0BAA0B;IACzC,aAAa,CACX,iBAAiB,EAAE,eAAe,EAAE,EACpC,KAAK,EAAE,KAAK,GACX,eAAe,GAAG,IAAI,CAAC;CAC3B"}

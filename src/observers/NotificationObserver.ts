@@ -1,0 +1,62 @@
+import { OrderObserver, OrderEvent } from "../interfaces/OrderObserver";
+import { OrderStatus } from "../enums/OrderStatus";
+
+/**
+ * NotificationObserver listens to order events and sends notifications.
+ *
+ * WHY THIS CLASS EXISTS:
+ *   Demonstrates the Observer pattern's key benefit: Order doesn't know
+ *   about notifications. It just publishes events. This observer
+ *   independently decides which events to act on.
+ *
+ * In production, this would integrate with SMS/email/push notification services.
+ * Here it just logs to console to demonstrate the mechanism.
+ *
+ * SOLID:
+ *   SRP — Notification logic is here, not in Order.
+ *   OCP — Adding this observer required zero changes to Order.
+ */
+export class NotificationObserver implements OrderObserver {
+  onOrderEvent(event: OrderEvent): void {
+    const { order, newStatus } = event;
+
+    switch (newStatus) {
+      case OrderStatus.ACCEPTED:
+        console.log(
+          `  📱 Notification → ${order.customer.name}: ` +
+          `Your order #${order.id} has been accepted by ${order.restaurant.name}!`
+        );
+        break;
+      case OrderStatus.PREPARING:
+        console.log(
+          `  📱 Notification → ${order.customer.name}: ` +
+          `Your order #${order.id} is being prepared!`
+        );
+        break;
+      case OrderStatus.READY_FOR_PICKUP:
+        console.log(
+          `  📱 Notification → ${order.customer.name}: ` +
+          `Your order #${order.id} is ready for pickup!`
+        );
+        break;
+      case OrderStatus.PICKED_UP:
+        console.log(
+          `  📱 Notification → ${order.customer.name}: ` +
+          `Your order #${order.id} is on its way!`
+        );
+        break;
+      case OrderStatus.DELIVERED:
+        console.log(
+          `  📱 Notification → ${order.customer.name}: ` +
+          `Your order #${order.id} has been delivered. Enjoy your meal!`
+        );
+        break;
+      case OrderStatus.CANCELLED:
+        console.log(
+          `  📱 Notification → ${order.customer.name}: ` +
+          `Your order #${order.id} has been cancelled.`
+        );
+        break;
+    }
+  }
+}

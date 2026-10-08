@@ -1,0 +1,14 @@
+{
+  "name": "food-delivery-lld",
+  "version": "1.0.0",
+  "description": "Food Delivery Ordering System - LLD Exercise",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^5.3.0"
+  }
+}
